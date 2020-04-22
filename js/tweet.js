@@ -1,7 +1,7 @@
 var tweetData = [
     {
-        "longitude": -74.00,
-        "latitude": 40.42,
+        "longitude": -119.4179,
+        "latitude": 36.7783,
         "message": "Confusion prevails over how many people in Iran have been infected, and how many have died, from the coronavirus.\u00a0 https://t.co/FiA8Oxu6uR"
     },
     {

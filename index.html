@@ -416,10 +416,10 @@
                         iconUrl: 'icon/leaf-orange.png'
                     });
 
-
+                iconArray = [greenIcon,redIcon, orangeIcon]
                 var clickTimes = 0
 
-
+                layerList = []
                 function buttonFunction() {
                     clickTimes += 1
                     if (clickTimes == tweetData.length + 1) {
@@ -427,19 +427,24 @@
                         var valid = document.getElementById('messageTweetValid')
                         message.innerHTML = "Click the Button to retrieve"
                         valid.innerHTML = ""
-                        clickTimes -= tweetData.length
+                        clickTimes =  clickTimes -tweetData.length-1
+                        for( i in layerList){
+                            layerList[i].remove()
+                        }
+
 
                     } else {
 
                         var message = document.getElementById('messageTweet')
                         var valid = document.getElementById('messageTweetValid')
-                        message.innerHTML = tweetData[clickTimes]["message"]
+                        message.innerHTML = tweetData[clickTimes-1]["message"]
                         valid.innerHTML = "valid"
-                        latitude = tweetData[clickTimes]["latitude"]
-                        longitude = tweetData[clickTimes]["longitude"]
-                        L.marker([latitude, longitude], {
-                            icon: greenIcon
-                        }).addTo(map).bindPopup(tweetData[clickTimes]["message"]);
+                        latitude = tweetData[clickTimes-1]["latitude"]
+                        longitude = tweetData[clickTimes-1]["longitude"]
+                        var layerid = L.marker([latitude, longitude], {
+                            icon: iconArray[clickTimes%3]
+                        }).addTo(map).bindPopup(tweetData[clickTimes-1]["message"]);
+                        layerList.push(layerid)
                     }
                 }
 
