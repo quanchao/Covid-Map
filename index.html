@@ -433,7 +433,15 @@
                         }
 
 
-                    } else {
+                    } 
+                    else if(clickTimes == 4){
+                        var message = document.getElementById('messageTweet')
+                        var valid = document.getElementById('messageTweetValid')
+                        message.innerHTML = tweetData[clickTimes-1]["message"]
+                        valid.innerHTML = "invalid, therefore not added to map"
+                        
+                    }
+                    else {
 
                         var message = document.getElementById('messageTweet')
                         var valid = document.getElementById('messageTweetValid')
