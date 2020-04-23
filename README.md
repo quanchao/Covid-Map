@@ -29,6 +29,7 @@ Tweet Data:
 ``` 
 
 ## Timechart of U.S. cases
+You can see the cases in United State for any date between 3.1-3.31. 
 
 The core part of the codes is to upate information on the map according to the selected data.
 ```
@@ -51,7 +52,43 @@ The core part of the codes is to upate information on the map according to the s
 
 
 
-
-
 ## Tweet detction
+In  this part, you can click on the "Click Me" button to retrieve a tweet from server, after that, it will send the message to backend to predict if this message is a valid one related to Covid-19. If so, it will added this information to the map with a marker which you can click to get detailed information. Otherwise, you will get a hint saying the message is invalid. After you have used all tweets in the server, all the Markers will be cleared.
+
+
+```
+function buttonFunction() {
+                    clickTimes += 1
+                    if (clickTimes == tweetData.length + 1) {
+                        var message = document.getElementById('messageTweet')
+                        var valid = document.getElementById('messageTweetValid')
+                        message.innerHTML = "Click the Button to retrieve"
+                        valid.innerHTML = ""
+                        clickTimes =  clickTimes -tweetData.length-1
+                        for( i in layerList){
+                            layerList[i].remove()
+                        }
+
+
+                    } 
+                    else {
+
+                        var message = document.getElementById('messageTweet')
+                        var valid = document.getElementById('messageTweetValid')
+                        message.innerHTML = tweetData[clickTimes-1]["message"]
+                        if(validFlag){
+                        	valid.innerHTML = "valid"
+                        	latitude = tweetData[clickTimes-1]["latitude"]
+                        	longitude = tweetData[clickTimes-1]["longitude"]
+                        	var layerid = L.marker([latitude, longitude], {
+                            	icon: iconArray[clickTimes%3]
+                        	}).addTo(map).bindPopup(tweetData[clickTimes-1]["message"]);
+                        	layerList.push(layerid)
+                        }
+                        else{
+                        	valid.innerHTML = "invalid, therefore not added to map"
+                        }
+                    }
+                }
+```
 ![tweet](image/tweet.gif)
