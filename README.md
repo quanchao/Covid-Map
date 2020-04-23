@@ -1,6 +1,6 @@
 # Covid-19 Infection Map
 
-This is the repository of the source code for the Covid-19 Infection Map([quanchao.me](http://quanchao.me)). The interactive maps enables people to see the trends of Covid-19 in United States from Mar.1 to Mar.31. The dataset is collected from the CDC official source as well as the Tweet as the unconfirmed source.
+This is the repository of the source code for the Covid-19 Infection Map([quanchao.me](http://quanchao.me)). The interactive maps enables people to see the trends of Covid-19 in United States from Mar.1 to Mar.31. It can also detect the tweet events and predict if this tweet is related to a real Covid-19 event. After that, it will display the valid Tweet Message on the map. The dataset is collected from the CDC official source as well as the Tweet as the unconfirmed source.
 ## Data Sources 
 1. [tweet](https://developer.twitter.com/en/docs/tweets/search/api-reference/get-search-tweets)
 2.  [CDC](https://www.cdc.gov/)
