@@ -7,3 +7,7 @@ This is the repository of the source code for the Covid-19 Infection Map([quanch
 
 
 ![video](image/shortvideo.mov)
+
+
+
+![tweet](image/tweet.gif)
