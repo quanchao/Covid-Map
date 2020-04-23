@@ -31,6 +31,21 @@ Tweet Data:
 ## Timechart of U.S. cases
 You can see the cases in United State for any date between 3.1-3.31. 
 
+To create a map, we need the information about the shapes of states in United States. Since they are not very big, we stored and loaded them via GeoJson. The following is a sample json data.
+
+```
+{
+
+	"type": "Feature"
+	"properties":{
+		"name": "Texas",
+		"density": 57
+	}
+	"geometry": ...
+}
+```
+
+
 The core part of the codes is to upate information on the map according to the selected data.
 ```
  function updateCorona(date) {
