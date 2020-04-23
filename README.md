@@ -33,19 +33,18 @@ Tweet Data:
 The core part of the codes is to upate information on the map according to the selected data.
 ```
  function updateCorona(date) {
-                    for (var i = 0; i < statesData["features"].length; i++) {
-                        stateName = statesData.features[i].properties.name;
-                        if (coronaData[stateName] == undefined) {
-                            console.warn(stateName);
-                            statesData.features[i].properties.density = 0;
-                        } else if (coronaData[stateName][date] == undefined) {
-                            statesData.features[i].properties.density = 0;
-                        } else {
-                            statesData.features[i].properties.density = coronaData[stateName][date]["confirmed"];
-                        }
-
-                    }
-                }
+    for (var i = 0; i < statesData["features"].length; i++) {
+        stateName = statesData.features[i].properties.name
+        if (coronaData[stateName] == undefined) {
+            console.warn(stateName);
+            statesData.features[i].properties.density = 0;
+        } else if (coronaData[stateName][date] == undefined) {
+            statesData.features[i].properties.density = 0;
+        } else {
+            statesData.features[i].properties.density = coronaData[stateName][date]["confirmed"];
+       	}                    
+    }
+}
 ```
 
 ![video](image/timetrend.gif)
