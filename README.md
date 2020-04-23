@@ -6,4 +6,4 @@ This is the repository of the source code for the Covid-19 Infection Map([quanch
 
 
 
-![](image/shortvideo.mov)
+![video](image/shortvideo.mov)
